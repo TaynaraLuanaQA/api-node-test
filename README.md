@@ -32,4 +32,6 @@ Clone o repositório: `git clone <URL_DO_REPOSITORIO>´
 
  ### Inicialização do Servidor
 
+Antes de iniciar o servidor executar npm install na raiz do projeto
+
 Para iniciar o servidor: ´npm start ´
