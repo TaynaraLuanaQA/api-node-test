@@ -41,6 +41,7 @@ exports.updateProduct = (req, res) => {
     res.json(product);
 };
 
+//Finalizar depois.
 exports.deleteProduct = (req, res) => {
     const index = products.findIndex(p => p.id === parseInt(req.params.id));
     if (index === -1) return res.status(404).send('Product not found');
