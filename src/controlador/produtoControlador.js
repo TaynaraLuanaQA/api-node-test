@@ -6,7 +6,22 @@ exports.getAllProducts = (req, res) => {
 };
 
 exports.createProduct = (req, res) => {
-    const product = { id: idCounter++, ...req.body };
+    const { name, price, category, quantity, description, manufacturer } = req.body;
+
+    if (!name || !price || !category || !quantity) {
+        return res.status(400).send('Missing fields');
+    }
+
+    const product = {
+        id: idCounter++,
+        name,
+        price,
+        category,
+        quantity,
+        description,
+        manufacturer
+    };
+
     products.push(product);
     res.status(201).json(product);
 };
@@ -20,7 +35,9 @@ exports.getProductById = (req, res) => {
 exports.updateProduct = (req, res) => {
     const product = products.find(p => p.id === parseInt(req.params.id));
     if (!product) return res.status(404).send('Product not found');
+
     Object.assign(product, req.body);
+
     res.json(product);
 };
 
