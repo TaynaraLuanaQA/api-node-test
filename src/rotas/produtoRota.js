@@ -29,7 +29,7 @@
 
 /**
  * @swagger
- * /api/produtos:
+ * /produtos:
  *   get:
  *     summary: Lista todos os produtos
  *     responses:
@@ -50,7 +50,7 @@
 
 /**
  * @swagger
- * /api/produtos/{id}:
+ * /produtos/{id}:
  *   get:
  *     summary: Consulta um produto pelo ID
  *     parameters:
